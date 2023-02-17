@@ -47,7 +47,8 @@ func (l *Loader) Header() {
 	}
 	switch {
 	case n < 1 || n > RDB_VERSION:
-		log.Panicf("Can't handle RDB format version = %d.", n)
+// 		log.Panicf("Can't handle RDB format version = %d.", n)
+		l.header.version = n
 	default:
 		l.header.version = n
 	}
